@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ReviewScope Design System - Dark Analytical Theme */
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 13%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 15%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 173 80% 40%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 222 47% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 30% 22%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 173 80% 40%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 30% 25%;
+    --input: 222 30% 20%;
+    --ring: 173 80% 40%;
+
+    --radius: 0.5rem;
+
+    /* Risk-based semantic colors */
+    --risk-low: 158 64% 52%;
+    --risk-medium: 45 93% 47%;
+    --risk-high: 0 72% 51%;
+
+    /* Data visualization colors */
+    --chart-1: 173 80% 40%;
+    --chart-2: 262 83% 58%;
+    --chart-3: 45 93% 47%;
+    --chart-4: 0 72% 51%;
+    --chart-5: 199 89% 48%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(173 80% 40%) 0%, hsl(199 89% 48%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(222 47% 15%) 0%, hsl(222 47% 12%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(173 80% 40% / 0.15) 0%, transparent 70%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(222 47% 5% / 0.4);
+    --shadow-md: 0 4px 16px hsl(222 47% 5% / 0.5);
+    --shadow-lg: 0 8px 32px hsl(222 47% 5% / 0.6);
+    --shadow-glow: 0 0 24px hsl(173 80% 40% / 0.3);
+
+    --sidebar-background: 222 47% 9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 173 80% 40%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 222 47% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 30% 20%;
+    --sidebar-ring: 173 80% 40%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 13%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 15%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 173 80% 40%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 222 47% 18%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222 30% 22%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 173 80% 40%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 30% 25%;
+    --input: 222 30% 20%;
+    --ring: 173 80% 40%;
+    --sidebar-background: 222 47% 9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 173 80% 40%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 222 47% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 30% 20%;
+    --sidebar-ring: 173 80% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .risk-badge-low {
+    @apply bg-risk-low/20 text-risk-low border border-risk-low/30;
+  }
+
+  .risk-badge-medium {
+    @apply bg-risk-medium/20 text-risk-medium border border-risk-medium/30;
+  }
+
+  .risk-badge-high {
+    @apply bg-risk-high/20 text-risk-high border border-risk-high/30;
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 shadow-lg;
+  }
+
+  .data-grid {
+    @apply font-mono text-sm;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-stage-enter {
+    animation: stageEnter 0.5s ease-out forwards;
+  }
+
+  @keyframes stageEnter {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
+}
