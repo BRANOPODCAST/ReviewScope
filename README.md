@@ -64,7 +64,7 @@ Visualization: Clusters, timelines, key signals, and manipulation bands
 
 
 
-git clone https://github.com/BRANOPODCAST/reviewscope.git
+git clone https://github.com/BRANOPODCAST/ReviewScope.git
 
 cd reviewscope
 
